@@ -246,10 +246,3 @@ You can query graphql from ![playground IDE](./images/grphql-playground.png)
 
 > **_NOTE:_** In this tutorial the focus is on installation - for more examples look at [official snippets)(https://github.com/stepzen-dev/snippets) or  great [JSON samples repo](https://github.com/learnwithjason/lets-learn-stepzen)].
 
-
-
-## TBD
-
-In order to wider the scope of this tutorial - stress testing, memory and cpu details of specific environment will be done in the future  TBD.
-Air-gapped installation TBD.
-Introspection server setup TBD.
