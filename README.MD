@@ -87,9 +87,10 @@ To get dsn literal check **uri** entry under *apic-postgres-pguser-apic-postgres
 
 
 4. Apply files
+   for the operator.yaml file, replace the namespace with your namespace
     ```shell
     oc apply -f crd.yaml
-    oc apply -f operator.yaml -n NAMESPACE
+    oc apply -f operator.yaml
     ```
 5.  Create CR that defines configuration setting for StepZen server deployment
 
