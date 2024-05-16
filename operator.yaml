@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/name: serviceaccount
     app.kubernetes.io/part-of: stepzen-graph-operator
   name: stepzen-graph-operator
-  namespace: apic
+  
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -22,7 +22,7 @@ metadata:
     app.kubernetes.io/name: role
     app.kubernetes.io/part-of: stepzen-graph-operator
   name: stepzen-graph-leader-election-role
-  namespace: apic
+  
 rules:
 - apiGroups:
   - ""
@@ -280,7 +280,7 @@ metadata:
     app.kubernetes.io/name: rolebinding
     app.kubernetes.io/part-of: stepzen-graph-operator
   name: stepzen-graph-leader-election-rolebinding
-  namespace: apic
+  
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -288,7 +288,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: stepzen-graph-operator
-  namespace: apic
+  
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -308,7 +308,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: stepzen-graph-operator
-  namespace: apic
+  
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -328,7 +328,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: stepzen-graph-operator
-  namespace: apic
+  
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -341,7 +341,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: stepzen-graph-operator
-  namespace: apic
+  
 ---
 apiVersion: v1
 kind: Service
@@ -355,7 +355,7 @@ metadata:
     app.kubernetes.io/part-of: stepzen-graph-operator
     control-plane: stepzen-graph-operator
   name: stepzen-graph-metrics-service
-  namespace: apic
+  
 spec:
   ports:
   - name: https
@@ -376,7 +376,7 @@ metadata:
     app.kubernetes.io/name: service
     app.kubernetes.io/part-of: stepzen-graph-operator
   name: stepzen-graph-webhook-service
-  namespace: apic
+  
 spec:
   ports:
   - port: 443
@@ -401,7 +401,7 @@ metadata:
     app.kubernetes.io/part-of: stepzen-graph-operator
     control-plane: stepzen-graph-operator
   name: stepzen-graph-operator
-  namespace: apic
+  
 spec:
   replicas: 1
   selector:
@@ -526,7 +526,7 @@ webhooks:
   clientConfig:
     service:
       name: stepzen-graph-webhook-service
-      namespace: apic
+      
       path: /mutate-stepzen-graph-ibm-com-v1beta1-stepzengraphserver
   failurePolicy: Fail
   name: mstepzengraphserver.kb.io
@@ -553,7 +553,7 @@ webhooks:
   clientConfig:
     service:
       name: stepzen-graph-webhook-service
-      namespace: apic
+      
       path: /validate-stepzen-graph-ibm-com-v1beta1-stepzengraphserver
   failurePolicy: Fail
   name: vstepzengraphserver.kb.io
